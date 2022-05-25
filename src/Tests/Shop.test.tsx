@@ -29,4 +29,8 @@ describe("Renders Text", () => {
     const linkElement = screen.getByText(/shop/i);
     expect(linkElement).toBeInTheDocument();
   });
+  test("Render one itemcard of each item", () => {
+    const shopContainer = document.querySelector("#shopContainer");
+    expect(shopContainer?.childElementCount).toBe(1);
+  });
 });
