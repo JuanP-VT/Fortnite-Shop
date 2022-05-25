@@ -17,5 +17,5 @@ export interface Images {
   smallIcon: string;
   icon: string;
   featured?: string;
-  other: any;
+  other?: string;
 }
