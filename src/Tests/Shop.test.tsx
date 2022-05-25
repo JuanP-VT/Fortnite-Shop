@@ -25,7 +25,8 @@ describe("Renders Text", () => {
       </BrowserRouter>
     );
   });
-  // test("Renders Home", () => {
-  // const linkElement = screen.expect(linkElement).toBeInTheDocument();
-  // });
+  test("Renders Shop Component", () => {
+    const linkElement = screen.getByText(/shop/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });
