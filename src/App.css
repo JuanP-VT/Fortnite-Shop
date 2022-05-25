@@ -1,5 +1,39 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+#App {
+  display: flex;
+  flex-direction: column;
+  height: 1000px; /*placeholder*/
+  background-color: rgba(0, 0, 0, 0.806);
+}
 #topNav {
+  height: 10%;
+  padding: 20px;
   display: flex;
   gap: 50px;
   justify-content: center;
 }
+#Shop {
+  height: 90%;
+}
+#shopContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.itemCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  width: 120px;
+  height: 120px;
+}
+.itemCardImage {
+  height: 100px;
+  width: 100px;
+}
+/* .itemCardInfo { */
+/* } */
