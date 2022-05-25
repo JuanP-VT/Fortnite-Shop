@@ -16,6 +16,6 @@ export interface Item {
 export interface Images {
   smallIcon: string;
   icon: string;
-  featured?: string;
+  featured?: string | undefined;
   other?: string;
 }
