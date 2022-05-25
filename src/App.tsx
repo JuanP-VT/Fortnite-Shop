@@ -3,6 +3,7 @@ import "./App.css";
 import TopNav from "./Components/TopNav";
 import { Route, Routes } from "react-router-dom";
 import { CatalogInterface } from "./Interfaces/CatalogInterface";
+import Shop from "./Components/Shop";
 function App() {
   const [catalog, setCatalog] = useState<CatalogInterface | null>(null);
   useEffect(() => {
@@ -52,7 +53,9 @@ function App() {
   return (
     <div id="App">
       <TopNav />
-      <Routes></Routes>
+      <Routes>
+        <Route path="/shop" element={<Shop catalog={catalog} />} />
+      </Routes>
     </div>
   );
 }
