@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { CatalogInterface } from "../Interfaces/CatalogInterface";
 import DogeIcon from "../img/dogecoin.png";
+import handleAddToCart from "../handleAddToCart";
 interface Props {
   catalog: CatalogInterface | null;
 }
@@ -55,10 +56,15 @@ function Shop({ catalog }: Props) {
         infoDesc.classList.add("infoDesc");
         infoBox.append(infoName, infoDesc, infoPriceBox);
 
-        itemCard.append(itemCardImageContainer, infoBox);
         // Rarity Color
         itemCard.classList.add(`rarity-${element.items[0].rarity}`);
+        //Add Cart Button
+        const addToCartBtn = document.createElement("button");
+        addToCartBtn.classList.add("itemCardAddToCardButton");
+        addToCartBtn.textContent = "Add To Cart";
+        addToCartBtn.addEventListener("click", handleAddToCart);
         //Append item card
+        itemCard.append(itemCardImageContainer, infoBox, addToCartBtn);
         if (shopContainer !== null) {
           shopContainer.append(itemCard);
         }
