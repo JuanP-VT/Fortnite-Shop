@@ -4,8 +4,10 @@ import TopNav from "./Components/TopNav";
 import { Route, Routes } from "react-router-dom";
 import { CatalogInterface } from "./Interfaces/CatalogInterface";
 import Shop from "./Components/Shop";
+import { CartInterface } from "./Interfaces/CartInterface";
 function App() {
   const [catalog, setCatalog] = useState<CatalogInterface | null>(null);
+  const [cart, setCart] = useState<CartInterface | []>([]);
   useEffect(() => {
     async function callApi() {
       const res = await fetch("https://fortnite-api.com/v2/shop/br");
@@ -53,11 +55,15 @@ function App() {
     }
     callApi();
   }, []);
+
   return (
     <div id="App">
       <TopNav />
       <Routes>
-        <Route path="/shop" element={<Shop catalog={catalog} />} />
+        <Route
+          path="/shop"
+          element={<Shop catalog={catalog} setCart={setCart} cart={cart} />}
+        />
       </Routes>
     </div>
   );

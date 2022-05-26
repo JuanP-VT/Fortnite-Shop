@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 import { CatalogInterface } from "../Interfaces/CatalogInterface";
 import DogeIcon from "../img/dogecoin.png";
-import handleAddToCart from "../handleAddToCart";
+import { CartInterface } from "../Interfaces/CartInterface";
 interface Props {
   catalog: CatalogInterface | null;
+  setCart: React.Dispatch<React.SetStateAction<CartInterface | []>>;
+
+  cart: CartInterface;
 }
 
-function Shop({ catalog }: Props) {
+function Shop({ catalog, cart, setCart }: Props) {
   useEffect(() => {
     console.log(catalog);
     const shopContainer = document.querySelector("#shopContainer");
@@ -62,7 +65,21 @@ function Shop({ catalog }: Props) {
         const addToCartBtn = document.createElement("button");
         addToCartBtn.classList.add("itemCardAddToCardButton");
         addToCartBtn.textContent = "Add To Cart";
-        addToCartBtn.addEventListener("click", handleAddToCart);
+        addToCartBtn.addEventListener("click", (e: Event) => {
+          //get itemCard that invoked this call
+          const target = e.currentTarget as HTMLButtonElement;
+          const parentElem = target.parentNode as HTMLDivElement;
+          const itemIndex = parentElem.getAttribute("data-index");
+          if (itemIndex) {
+            const indexNumber = parseInt(itemIndex);
+            const newElement = catalog[indexNumber];
+            const newCart = [...cart, newElement];
+            console.log(newCart);
+            setCart((oldCart) => [...oldCart, newElement]);
+          }
+
+          console.log(itemIndex);
+        });
         //Append item card
         itemCard.append(itemCardImageContainer, infoBox, addToCartBtn);
         if (shopContainer !== null) {
@@ -70,7 +87,7 @@ function Shop({ catalog }: Props) {
         }
       }
     }
-  }, [catalog]);
+  }, [cart, catalog, setCart]);
   return (
     <div id="Shop">
       <h1>Shop</h1>
