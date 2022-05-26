@@ -10,6 +10,7 @@ function App() {
     async function callApi() {
       const res = await fetch("https://fortnite-api.com/v2/shop/br");
       const response = await res.json();
+      console.log(response);
       //FortniteAPI return entires in 3 categories
       const daily = response.data.daily.entries;
       const featured = response.data.featured.entries;
@@ -30,11 +31,13 @@ function App() {
           const name = element.name;
           const images = element.images;
           const description = element.description;
+          const rarity = element.rarity.value;
           const newEntry = {
             id: id,
             name: name,
             images: images,
             description: description,
+            rarity: rarity,
           };
           items.push(newEntry);
         }

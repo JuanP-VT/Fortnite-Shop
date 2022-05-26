@@ -15,6 +15,7 @@ describe("Renders Text", () => {
             images: { icon: "string", other: "", smallIcon: "", featured: "" },
             name: "String",
             id: "string",
+            rarity: "rare",
           },
         ],
       },

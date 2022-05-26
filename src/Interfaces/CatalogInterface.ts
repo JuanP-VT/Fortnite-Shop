@@ -11,6 +11,7 @@ export interface Item {
   images: Images;
   name: string;
   id: string;
+  rarity: string;
 }
 
 export interface Images {
