@@ -75,3 +75,61 @@ font-family: 'Open Sans', sans-serif;
   height: 25px;
   margin-left: 5px;
 }
+
+.rarity-uncommon {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(50, 187, 41, 1) 45%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.rarity-rare {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(8, 233, 238, 1) 45%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.rarity-legendary {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(244, 156, 2, 1) 45%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.rarity-epic {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(244, 2, 173, 1) 49%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.rarity-gaminglegends {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(52, 52, 212, 1) 49%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.rarity-icon {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    175deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(39, 212, 204, 1) 49%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

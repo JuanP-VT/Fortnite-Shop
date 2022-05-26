@@ -52,10 +52,12 @@ function Shop({ catalog }: Props) {
         const infoDesc = document.createElement("p");
         infoDesc.textContent = `"${element.items[0].description}"`;
         infoDesc.classList.add("infoDesc");
-
         infoBox.append(infoName, infoDesc, infoPriceBox);
 
         itemCard.append(itemCardImageContainer, infoBox);
+        // Rarity Color
+        itemCard.classList.add(`rarity-${element.items[0].rarity}`);
+        //Append item card
         if (shopContainer !== null) {
           shopContainer.append(itemCard);
         }
