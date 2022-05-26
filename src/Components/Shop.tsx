@@ -21,6 +21,7 @@ function Shop({ catalog }: Props) {
         const element = catalog[index];
         const itemCard = document.createElement("div");
         itemCard.classList.add("itemCard");
+        itemCard.setAttribute("data-index", `${index}`);
         const itemCardImageContainer = document.createElement("div");
         itemCardImageContainer.classList.add("itemCardImageContainer");
         const itemImage = document.createElement("img");
