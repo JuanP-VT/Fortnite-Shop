@@ -35,9 +35,10 @@ font-family: 'Open Sans', sans-serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid black 1px;
+  border: solid black 3px;
   width: 300px;
-  height: 330px;
+  height: 500px;
+  border-radius: 5px;
 }
 .itemCardImageContainer {
   height: 60%;
