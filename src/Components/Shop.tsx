@@ -90,7 +90,7 @@ function Shop({ catalog, cart, setCart }: Props) {
   }, [cart, catalog, setCart]);
   return (
     <div id="Shop">
-      <h1>Shop</h1>
+      <h1 className="highlight">Shop</h1>
       <div id="shopContainer"></div>
     </div>
   );

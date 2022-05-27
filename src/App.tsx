@@ -9,7 +9,8 @@ function App() {
   const [catalog, setCatalog] = useState<CatalogInterface | null>(null);
   const [cart, setCart] = useState<CartInterface | []>([]);
   useEffect(() => {
-    async function callApi() {
+    //This function returns a promise of the Catalog of items
+    async function callApi(): Promise<CatalogInterface> {
       const res = await fetch("https://fortnite-api.com/v2/shop/br");
       const response = await res.json();
       console.log(response);
@@ -52,6 +53,7 @@ function App() {
       }
       setCatalog(FilteredArray);
       console.log(FilteredArray);
+      return FilteredArray;
     }
     callApi();
   }, []);
