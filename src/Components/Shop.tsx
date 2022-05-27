@@ -65,6 +65,7 @@ function Shop({ catalog, cart, setCart }: Props) {
         const addToCartBtn = document.createElement("button");
         addToCartBtn.classList.add("itemCardAddToCardButton");
         addToCartBtn.textContent = "Add To Cart";
+        //Button Event
         addToCartBtn.addEventListener("click", (e: Event) => {
           //get itemCard that invoked this call
           const target = e.currentTarget as HTMLButtonElement;
@@ -73,12 +74,14 @@ function Shop({ catalog, cart, setCart }: Props) {
           if (itemIndex) {
             const indexNumber = parseInt(itemIndex);
             const newElement = catalog[indexNumber];
-            const newCart = [...cart, newElement];
-            console.log(newCart);
-            setCart((oldCart) => [...oldCart, newElement]);
+            // If item is already saved return
+            const isOnState = cart.includes(newElement);
+            if (isOnState === false) {
+              setCart((oldCart) => [...oldCart, newElement]);
+            }
           }
 
-          console.log(itemIndex);
+          console.log(cart);
         });
         //Append item card
         itemCard.append(itemCardImageContainer, infoBox, addToCartBtn);
