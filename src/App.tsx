@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { CatalogInterface } from "./Interfaces/CatalogInterface";
 import Shop from "./Components/Shop";
 import { CartInterface } from "./Interfaces/CartInterface";
+import Cart from "./Components/Cart";
 function App() {
   const [catalog, setCatalog] = useState<CatalogInterface | null>(null);
   const [cart, setCart] = useState<CartInterface | []>([]);
@@ -66,6 +67,7 @@ function App() {
           path="/shop"
           element={<Shop catalog={catalog} setCart={setCart} cart={cart} />}
         />
+        <Route path="/cart" element={<Cart cart={cart} />} />
       </Routes>
     </div>
   );
