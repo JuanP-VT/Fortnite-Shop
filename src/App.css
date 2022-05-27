@@ -150,10 +150,13 @@ font-family: 'Open Sans', sans-serif;
   flex-direction: column;
   width: 100%;
   padding-top: 50px;
-  padding-left: 200px;
+  padding-left: 500px;
+  padding-right: 500px;
 }
 .itemCartCard {
   display: flex;
+  border: 2px solid black;
+  padding: 15px;
 }
 .imageContainer {
   height: 100px;
@@ -163,4 +166,8 @@ font-family: 'Open Sans', sans-serif;
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+.descriptionBox {
+  display: flex;
+  flex-direction: column;
 }

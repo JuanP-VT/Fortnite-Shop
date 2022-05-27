@@ -36,8 +36,19 @@ function Cart({ cart }: Props) {
           image.src = element.items[0].images.featured;
         }
         imageContainer.append(image);
+        //Description
+        const descriptionBox = document.createElement("div");
+        descriptionBox.classList.add("descriptionBox");
+        const name = document.createElement("p");
+        name.textContent = element.items[0].name;
+        const description = document.createElement("p");
+        description.textContent = element.items[0].description;
+        const price = document.createElement("div");
+        price.textContent = element.finalPrice.toString();
+        descriptionBox.append(name, description, price);
+
         //Append to container
-        cartCard.append(imageContainer);
+        cartCard.append(imageContainer, descriptionBox);
         cartContainer.append(cartCard);
       }
     }
@@ -46,6 +57,7 @@ function Cart({ cart }: Props) {
     <div id="Cart">
       <h1>My Cart</h1>
       <div id="cartContainer"></div>
+      <div id="grandTotal"> total: </div>
     </div>
   );
 }
