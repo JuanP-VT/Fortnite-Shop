@@ -28,7 +28,7 @@ describe("Renders Text", () => {
     );
   });
   test("Renders Cart", () => {
-    const linkElement = screen.getByText(/cart/i);
+    const linkElement = screen.getByText(/my cart/i);
     expect(linkElement).toBeInTheDocument();
   });
 });
