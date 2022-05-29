@@ -75,7 +75,7 @@ describe("Cart display number of items", () => {
         <TopNav cart={Cart} />
       </BrowserRouter>
     );
-    const linkElement = screen.getByText(/cart(1)/i);
+    const linkElement = screen.getByText("Cart (1)");
     expect(linkElement).toBeInTheDocument();
   });
 });
