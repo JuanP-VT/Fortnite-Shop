@@ -61,6 +61,9 @@ function Shop({ catalog, cart, setCart }: Props) {
 
         // Rarity Color
         itemCard.classList.add(`rarity-${element.items[0].rarity}`);
+        //Card Footer
+        const addToCartBtnBox = document.createElement("div");
+        addToCartBtnBox.classList.add("addToCartBtnBox");
         //Add Cart Button
         const addToCartBtn = document.createElement("button");
         addToCartBtn.classList.add("itemCardAddToCardButton");
@@ -69,8 +72,9 @@ function Shop({ catalog, cart, setCart }: Props) {
         addToCartBtn.addEventListener("click", (e: Event) => {
           //get itemCard that invoked this call
           const target = e.currentTarget as HTMLButtonElement;
-          const parentElem = target.parentNode as HTMLDivElement;
+          const parentElem = target.parentNode?.parentNode as HTMLDivElement;
           const itemIndex = parentElem.getAttribute("data-index");
+          console.log(itemIndex);
           if (itemIndex) {
             const indexNumber = parseInt(itemIndex);
             const newElement = catalog[indexNumber];
@@ -80,11 +84,17 @@ function Shop({ catalog, cart, setCart }: Props) {
               setCart((oldCart) => [...oldCart, newElement]);
             }
           }
-
           console.log(cart);
         });
+        const isInCart = document.createElement("div");
+        isInCart.classList.add("isInCart");
+        if (cart.includes(element)) {
+          isInCart.textContent = "Added To Cart!";
+        }
+        addToCartBtnBox.append(addToCartBtn, isInCart);
+
         //Append item card
-        itemCard.append(itemCardImageContainer, infoBox, addToCartBtn);
+        itemCard.append(itemCardImageContainer, infoBox, addToCartBtnBox);
         if (shopContainer !== null) {
           shopContainer.append(itemCard);
         }
