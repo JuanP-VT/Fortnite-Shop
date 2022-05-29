@@ -19,7 +19,14 @@ function CartTotal({ cart }: Props) {
     }
     getCartTotal(cart);
   }, [cart]);
-  return <div id="cartTotal">Total : {cartTotal}</div>;
+  return (
+    <div id="cartTotal">
+      <div id="total">Total : {cartTotal}</div>
+      <button onClick={() => alert("Thank You For Using My App!")}>
+        Go To Payment
+      </button>
+    </div>
+  );
 }
 
 export default CartTotal;
