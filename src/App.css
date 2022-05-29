@@ -12,17 +12,33 @@ font-family: 'Open Sans', sans-serif;
 #App {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.806);
+  position: relative;
 }
 #topNav {
-  height: 10%;
-  padding: 20px;
+  position: fixed;
   display: flex;
   gap: 50px;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  padding: 5px;
+}
+#Home {
+  height: 100vh;
+  background: url(/src/img/homebg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 #Shop {
-  height: 90%;
+  height: 100%;
+  width: 100%;
+  background: url(/src/img/shopBg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 #shopContainer {
   display: grid;
@@ -171,4 +187,34 @@ font-family: 'Open Sans', sans-serif;
 .descriptionBox {
   display: flex;
   flex-direction: column;
+}
+
+a {
+  border-bottom: 3px solid #d7ab5a;
+  transition: all 0.25s linear;
+  position: relative;
+  text-decoration: none;
+  color: rgb(189, 185, 185);
+  font-size: 1.5rem;
+  padding: 3px;
+  font-family: "Luckiest Guy", cursive;
+}
+
+a:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #61a3ff;
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* this is to match where the border is */
+  transform-origin: left;
+  transform: scale(0);
+  transition: 0.25s linear;
+  /*   will-change: transform; */
+}
+
+a:hover:before {
+  transform: scale(1);
 }
