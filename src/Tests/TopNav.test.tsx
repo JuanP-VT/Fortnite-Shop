@@ -2,7 +2,6 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import TopNav from "../Components/TopNav";
 import { BrowserRouter } from "react-router-dom";
-import { createInterface } from "readline";
 
 describe("Renders Text", () => {
   beforeEach(() => {
@@ -76,6 +75,54 @@ describe("Cart display number of items", () => {
       </BrowserRouter>
     );
     const linkElement = screen.getByText("Cart (1)");
+    expect(linkElement).toBeInTheDocument();
+  });
+
+  test("ItemCart with 2 item", () => {
+    const Cart = [
+      {
+        regularPrice: 100,
+        finalPrice: 100,
+        items: [
+          {
+            description: "string",
+            images: {
+              icon: "string",
+              other: "",
+              smallIcon: "",
+              featured: "",
+            },
+            name: "String",
+            id: "string",
+            rarity: "rare",
+          },
+        ],
+      },
+      {
+        regularPrice: 100,
+        finalPrice: 100,
+        items: [
+          {
+            description: "string",
+            images: {
+              icon: "string",
+              other: "",
+              smallIcon: "",
+              featured: "",
+            },
+            name: "String",
+            id: "string",
+            rarity: "rare",
+          },
+        ],
+      },
+    ];
+    render(
+      <BrowserRouter>
+        <TopNav cart={Cart} />
+      </BrowserRouter>
+    );
+    const linkElement = screen.getByText("Cart (2)");
     expect(linkElement).toBeInTheDocument();
   });
 });

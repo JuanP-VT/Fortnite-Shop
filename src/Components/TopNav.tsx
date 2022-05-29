@@ -9,7 +9,7 @@ function TopNav({ cart }: Props) {
     <div id="topNav">
       <Link to="/">Home</Link>
       <Link to="shop">Shop</Link>
-      <Link to="cart">Cart</Link>
+      <Link to="cart">Cart ({cart.length})</Link>
     </div>
   );
 }
