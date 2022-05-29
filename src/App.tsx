@@ -6,6 +6,7 @@ import { CatalogInterface } from "./Interfaces/CatalogInterface";
 import Shop from "./Components/Shop";
 import { CartInterface } from "./Interfaces/CartInterface";
 import Cart from "./Components/Cart";
+import Home from "./Components/Home";
 function App() {
   const [catalog, setCatalog] = useState<CatalogInterface | null>(null);
   const [cart, setCart] = useState<CartInterface | []>([]);
@@ -63,6 +64,7 @@ function App() {
     <div id="App">
       <TopNav cart={cart} />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route
           path="/shop"
           element={<Shop catalog={catalog} setCart={setCart} cart={cart} />}
