@@ -2,12 +2,34 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import TopNav from "../Components/TopNav";
 import { BrowserRouter } from "react-router-dom";
+import { createInterface } from "readline";
 
 describe("Renders Text", () => {
   beforeEach(() => {
+    const Cart = [
+      {
+        regularPrice: 100,
+        finalPrice: 100,
+        items: [
+          {
+            description: "string",
+            images: {
+              icon: "string",
+              other: "",
+              smallIcon: "",
+              featured: "",
+            },
+            name: "String",
+            id: "string",
+            rarity: "rare",
+          },
+        ],
+      },
+    ];
+
     render(
       <BrowserRouter>
-        <TopNav />
+        <TopNav cart={Cart} />
       </BrowserRouter>
     );
   });
@@ -22,6 +44,38 @@ describe("Renders Text", () => {
   });
   test("Renders Cart", () => {
     const linkElement = screen.getByText(/cart/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+});
+
+describe("Cart display number of items", () => {
+  test("ItemCart with 1 item", () => {
+    const Cart = [
+      {
+        regularPrice: 100,
+        finalPrice: 100,
+        items: [
+          {
+            description: "string",
+            images: {
+              icon: "string",
+              other: "",
+              smallIcon: "",
+              featured: "",
+            },
+            name: "String",
+            id: "string",
+            rarity: "rare",
+          },
+        ],
+      },
+    ];
+    render(
+      <BrowserRouter>
+        <TopNav cart={Cart} />
+      </BrowserRouter>
+    );
+    const linkElement = screen.getByText(/cart(1)/i);
     expect(linkElement).toBeInTheDocument();
   });
 });

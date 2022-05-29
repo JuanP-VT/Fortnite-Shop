@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function TopNav() {
+import { CartInterface } from "../Interfaces/CartInterface";
+interface Props {
+  cart: CartInterface;
+}
+function TopNav({ cart }: Props) {
   return (
     <div id="topNav">
       <Link to="/">Home</Link>

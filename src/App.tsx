@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div id="App">
-      <TopNav />
+      <TopNav cart={cart} />
       <Routes>
         <Route
           path="/shop"
