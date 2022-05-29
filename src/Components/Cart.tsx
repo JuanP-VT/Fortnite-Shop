@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { CartInterface } from "../Interfaces/CartInterface";
+import CartTotal from "./cartTotal";
 
 interface Props {
   cart: CartInterface | [];
@@ -17,10 +18,6 @@ function Cart({ cart }: Props) {
       }
     }
 
-    if (cart.length === 0) {
-      //placeholder
-      //return
-    }
     if (cart.length !== 0) {
       for (let index = 0; index < cart.length; index++) {
         const element = cart[index];
@@ -55,9 +52,9 @@ function Cart({ cart }: Props) {
   }, [cart]);
   return (
     <div id="Cart">
-      <h1>My Cart</h1>
+      <h1>My Shopping Cart</h1>
       <div id="cartContainer"></div>
-      <div id="grandTotal"> total: </div>
+      <CartTotal cart={cart} />
     </div>
   );
 }

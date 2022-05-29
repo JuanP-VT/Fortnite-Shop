@@ -3,11 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Cart from "../Components/Cart";
 import { CartInterface } from "../Interfaces/CartInterface";
-function getCartTotal(
-  fakeCart: {
-    finalPrice: number;
-  }[]
-) {
+function getCartTotal(fakeCart: any[] | { finalPrice: number }[]) {
   let Total = 0;
   for (let index = 0; index < fakeCart.length; index++) {
     const itemPrice = fakeCart[index].finalPrice;
@@ -45,7 +41,7 @@ describe("Renders Text", () => {
 });
 
 describe("Get Total Works as expected", () => {
-  test("Get Sum of 0 items", () => {
+  test("Sums Correctly", () => {
     const caseOne = [
       { finalPrice: 10 },
       { finalPrice: 10 },
@@ -53,6 +49,12 @@ describe("Get Total Works as expected", () => {
       { finalPrice: 10 },
       { finalPrice: 10 },
     ];
+    const caseTwo = [{ finalPrice: 10 }];
     expect(getCartTotal(caseOne)).toBe(50);
+    expect(getCartTotal(caseTwo)).toBe(10);
+  });
+  test("return 0 if empty array argument", () => {
+    const caseThree: number[] = [];
+    expect(getCartTotal(caseThree)).toBe(0);
   });
 });
