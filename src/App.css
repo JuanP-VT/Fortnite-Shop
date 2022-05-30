@@ -235,6 +235,7 @@ font-family: 'Open Sans', sans-serif;
   );
 }
 #cartContainer {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -290,4 +291,24 @@ font-family: 'Open Sans', sans-serif;
 
 .topNavLink:hover:before {
   transform: scale(1);
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 20px;
+}
+#footerIcon {
+  height: 50px;
+}
+.footerPb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pb-inf {
+  padding-left: 5px;
+  color: white;
+  text-decoration: none;
 }

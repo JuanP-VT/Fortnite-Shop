@@ -7,6 +7,7 @@ import Shop from "./Components/Shop";
 import { CartInterface } from "./Interfaces/CartInterface";
 import Cart from "./Components/Cart";
 import Home from "./Components/Home";
+import Footer from "./Components/Footer";
 function App() {
   const [catalog, setCatalog] = useState<CatalogInterface | null>(null);
   const [cart, setCart] = useState<CartInterface | []>([]);
@@ -71,6 +72,7 @@ function App() {
         />
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
