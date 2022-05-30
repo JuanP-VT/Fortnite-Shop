@@ -30,6 +30,48 @@ font-family: 'Open Sans', sans-serif;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
+}
+#homeTitle {
+  color: aliceblue;
+  font-size: 4rem;
+  padding-top: 250px;
+  padding-left: 350px;
+  padding-right: 350px;
+  width: 100%;
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  margin-bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#dogeHomeContainer {
+  width: 320px;
+  height: 320px;
+  border-radius: 100%;
+  margin-left: 40%;
+  margin-top: 100px;
+}
+#dogeHomeImage {
+  border-radius: 100%;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+#goToShop {
+  font-size: 4rem;
+  margin-left: 40%;
+  font-family: "Luckiest Guy", cursive;
+  text-decoration: none;
+  color: black;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+#goToShop:hover {
+  color: whitesmoke;
+  padding-top: 10px;
+  border-bottom: #d7ab5a solid 5px;
 }
 #Shop {
   height: 100%;
@@ -160,7 +202,15 @@ font-family: 'Open Sans', sans-serif;
     rgba(13, 15, 101, 1) 92%
   );
 }
-
+.rarity-shadow {
+  background: rgb(21, 20, 62);
+  background: linear-gradient(
+    152deg,
+    rgb(31, 31, 38) 5%,
+    rgba(0, 0, 0, 1) 49%,
+    rgb(31, 31, 38) 95%
+  );
+}
 #cartContainer {
   display: flex;
   flex-direction: column;
@@ -189,7 +239,7 @@ font-family: 'Open Sans', sans-serif;
   flex-direction: column;
 }
 
-a {
+.topNavLink {
   border-bottom: 3px solid #d7ab5a;
   transition: all 0.25s linear;
   position: relative;
@@ -200,7 +250,7 @@ a {
   font-family: "Luckiest Guy", cursive;
 }
 
-a:before {
+.topNavLink:before {
   content: "";
   display: block;
   width: 100%;
@@ -215,6 +265,6 @@ a:before {
   /*   will-change: transform; */
 }
 
-a:hover:before {
+.topNavLink:hover:before {
   transform: scale(1);
 }
