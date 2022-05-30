@@ -28,9 +28,10 @@ describe("Renders Text", () => {
         ],
       },
     ];
+    const setCart = jest.fn();
     render(
       <BrowserRouter>
-        <Cart cart={cart} />
+        <Cart cart={cart} setCart={setCart} />
       </BrowserRouter>
     );
   });
