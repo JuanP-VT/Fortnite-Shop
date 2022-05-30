@@ -82,22 +82,29 @@ font-family: 'Open Sans', sans-serif;
   -o-background-size: cover;
   background-size: cover;
 }
+#shopTitle {
+  margin-top: 60px;
+  text-align: center;
+  font-family: "Luckiest Guy", cursive;
+}
 #shopContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 80px;
 }
 .itemCard {
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid black 3px;
   width: 360px;
-  height: 460px;
-  border-radius: 5px;
+  height: 490px;
+  border-radius: 10px;
 }
+
 .itemCardImageContainer {
   height: 60%;
   width: 60%;
@@ -134,7 +141,23 @@ font-family: 'Open Sans', sans-serif;
   height: 25px;
   margin-left: 5px;
 }
-
+.itemCardAddToCardButton {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: purple;
+  border-radius: 8px;
+  background-color: #5086bd;
+  color: rgb(190, 190, 190);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+  transition: all 500ms ease;
+  margin-bottom: 5px;
+}
+.itemCardAddToCardButton:hover {
+  transform: scale(1.1);
+}
 .rarity-uncommon {
   background: rgb(0, 0, 0);
   background: linear-gradient(
