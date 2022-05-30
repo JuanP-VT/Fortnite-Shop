@@ -4,9 +4,10 @@ import CartTotal from "./cartTotal";
 
 interface Props {
   cart: CartInterface | [];
+  setCart: React.Dispatch<React.SetStateAction<CartInterface | []>>;
 }
 
-function Cart({ cart }: Props) {
+function Cart({ cart, setCart }: Props) {
   useEffect(() => {
     const cartContainer = document.querySelector(
       "#cartContainer"
@@ -24,6 +25,8 @@ function Cart({ cart }: Props) {
         //DOM
         const cartCard = document.createElement("div");
         cartCard.classList.add("itemCartCard");
+        const cardIndex = index.toString();
+        cartCard.setAttribute("data-cartIndex", cardIndex);
         //Image Container
         const imageContainer = document.createElement("div");
         imageContainer.classList.add("imageContainer");
@@ -43,13 +46,32 @@ function Cart({ cart }: Props) {
         const price = document.createElement("div");
         price.textContent = element.finalPrice.toString();
         descriptionBox.append(name, description, price);
-
+        //Delete item from cart button
+        const deleteFromCartBox = document.createElement("div");
+        deleteFromCartBox.classList.add("deleteFromCartBox");
+        const deleteFromCartButton = document.createElement("button");
+        deleteFromCartButton.textContent = "X";
+        deleteFromCartBox.append(deleteFromCartButton);
+        //Event for button
+        deleteFromCartButton.addEventListener("click", (e: Event) => {
+          //Get item's index
+          const currentTarget = e.currentTarget as HTMLDivElement;
+          const container = currentTarget.parentElement
+            ?.parentElement as HTMLDivElement;
+          const indexInCart = container?.getAttribute("data-cartindex");
+          if (indexInCart) {
+            const index = parseInt(indexInCart);
+            const targetToDelete = cart[index];
+            const newCart = cart.filter((item) => item !== targetToDelete);
+            setCart(newCart);
+          }
+        });
         //Append to container
-        cartCard.append(imageContainer, descriptionBox);
+        cartCard.append(imageContainer, descriptionBox, deleteFromCartBox);
         cartContainer.append(cartCard);
       }
     }
-  }, [cart]);
+  }, [cart, setCart]);
   return (
     <div id="Cart">
       <h1>My Shopping Cart</h1>

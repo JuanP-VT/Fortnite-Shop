@@ -69,7 +69,7 @@ function App() {
           path="/shop"
           element={<Shop catalog={catalog} setCart={setCart} cart={cart} />}
         />
-        <Route path="/cart" element={<Cart cart={cart} />} />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
       </Routes>
     </div>
   );
