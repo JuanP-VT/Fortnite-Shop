@@ -4,6 +4,12 @@
   margin: 0px;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+  color: whitesmoke;
+}
+.highlight {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: whitesmoke;
 }
 /*fonts
 font-family: 'Luckiest Guy', cursive;
@@ -83,9 +89,13 @@ font-family: 'Open Sans', sans-serif;
   background-size: cover;
 }
 #shopTitle {
+  color: aliceblue;
+  font-size: 2rem;
   margin-top: 60px;
-  text-align: center;
+  width: 100%;
   font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  margin-bottom: -20px;
 }
 #shopContainer {
   display: grid;
@@ -234,16 +244,33 @@ font-family: 'Open Sans', sans-serif;
     rgb(31, 31, 38) 95%
   );
 }
+#Cart {
+  background: url(/src/img/cartBg.webp) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+#cartTitle {
+  color: aliceblue;
+  font-size: 2rem;
+  margin-top: 60px;
+  width: 100%;
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  margin-bottom: -20px;
+}
 #cartContainer {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-top: 50px;
-  padding-left: 500px;
-  padding-right: 500px;
+  padding-left: 550px;
+  padding-right: 550px;
 }
 .itemCartCard {
+  position: relative;
   display: flex;
   border-bottom: 2px solid black;
   border-radius: 5px;
@@ -262,7 +289,28 @@ font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: column;
 }
-
+.deleteFromCartBox {
+  position: absolute;
+  justify-self: flex-end;
+  width: 8%;
+  right: 0%;
+}
+.deleteFromCartBtn {
+  padding: 5px;
+  color: black;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: rgb(128, 67, 67);
+  background-color: rgb(25, 24, 24);
+  border: 1px solid rgb(93, 55, 55);
+}
+#total {
+  font-size: 3rem;
+  font-family: "Luckiest Guy", cursive;
+  border-bottom: #d7ab5a 2px solid;
+  text-align: center;
+}
 .topNavLink {
   border-bottom: 3px solid #d7ab5a;
   transition: all 0.25s linear;
@@ -292,7 +340,6 @@ font-family: 'Open Sans', sans-serif;
 .topNavLink:hover:before {
   transform: scale(1);
 }
-
 #footer {
   display: flex;
   justify-content: center;

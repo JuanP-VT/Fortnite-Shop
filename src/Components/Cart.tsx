@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { CartInterface } from "../Interfaces/CartInterface";
 import CartTotal from "./cartTotal";
-
+import dogeCoinImg from "../img/dogecoin.png";
 interface Props {
   cart: CartInterface | [];
   setCart: React.Dispatch<React.SetStateAction<CartInterface | []>>;
@@ -25,6 +25,8 @@ function Cart({ cart, setCart }: Props) {
         //DOM
         const cartCard = document.createElement("div");
         cartCard.classList.add("itemCartCard");
+        //Rarity class
+        cartCard.classList.add(`rarity-${element.items[0].rarity}`);
         const cardIndex = index.toString();
         cartCard.setAttribute("data-cartIndex", cardIndex);
         //Image Container
@@ -41,16 +43,26 @@ function Cart({ cart, setCart }: Props) {
         descriptionBox.classList.add("descriptionBox");
         const name = document.createElement("p");
         name.textContent = element.items[0].name;
+        name.classList.add("infoName");
         const description = document.createElement("p");
         description.textContent = element.items[0].description;
+        description.classList.add("infoDesc");
+        const priceBox = document.createElement("div");
+        priceBox.classList.add("infoPriceBox");
         const price = document.createElement("div");
         price.textContent = element.finalPrice.toString();
-        descriptionBox.append(name, description, price);
+        const dogeCoinIcon = document.createElement("img");
+        dogeCoinIcon.src = dogeCoinImg;
+        dogeCoinIcon.classList.add("dogeIcon");
+        priceBox.append(price, dogeCoinIcon);
+        descriptionBox.append(name, description, priceBox);
         //Delete item from cart button
         const deleteFromCartBox = document.createElement("div");
         deleteFromCartBox.classList.add("deleteFromCartBox");
         const deleteFromCartButton = document.createElement("button");
-        deleteFromCartButton.textContent = "X";
+        deleteFromCartButton.textContent = "Delete";
+        deleteFromCartButton.classList.add("deleteFromCartBtn");
+
         deleteFromCartBox.append(deleteFromCartButton);
         //Event for button
         deleteFromCartButton.addEventListener("click", (e: Event) => {
@@ -74,7 +86,7 @@ function Cart({ cart, setCart }: Props) {
   }, [cart, setCart]);
   return (
     <div id="Cart">
-      <h1>My Shopping Cart</h1>
+      <h1 id="cartTitle">My Shopping Cart</h1>
       <div id="cartContainer"></div>
       <CartTotal cart={cart} />
     </div>
