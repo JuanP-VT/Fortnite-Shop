@@ -309,9 +309,7 @@ font-family: 'Open Sans', sans-serif;
   border: 1px solid rgb(93, 55, 55);
 }
 .deleteFromCartBtn:hover {
-  transform: scale(1.5);
-  padding: 50px;
-  background-color: red;
+  transform: scale(1.05);
 }
 #total {
   font-size: 3rem;
