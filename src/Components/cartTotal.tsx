@@ -22,7 +22,10 @@ function CartTotal({ cart }: Props) {
   return (
     <div id="cartTotal">
       <div id="total">Total : {cartTotal}</div>
-      <button onClick={() => alert("Thank You For Using My App!")}>
+      <button
+        id="toPaymentBtn"
+        onClick={() => alert("Thank You For Using My App!")}
+      >
         Go To Payment
       </button>
     </div>

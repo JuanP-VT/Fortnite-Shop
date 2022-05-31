@@ -60,7 +60,7 @@ function Cart({ cart, setCart }: Props) {
         const deleteFromCartBox = document.createElement("div");
         deleteFromCartBox.classList.add("deleteFromCartBox");
         const deleteFromCartButton = document.createElement("button");
-        deleteFromCartButton.textContent = "Delete";
+        deleteFromCartButton.textContent = " X ";
         deleteFromCartButton.classList.add("deleteFromCartBtn");
 
         deleteFromCartBox.append(deleteFromCartButton);
