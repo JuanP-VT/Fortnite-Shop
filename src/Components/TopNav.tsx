@@ -7,7 +7,7 @@ interface Props {
 function TopNav({ cart }: Props) {
   return (
     <div id="topNav">
-      <Link className="topNavLink" to="/">
+      <Link className="topNavLink" to="/shop-app">
         Home
       </Link>
       <Link className="topNavLink" to="shop">

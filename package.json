@@ -1,6 +1,7 @@
 {
-  "name": "fortnite-shop",
+  "name": "shop-app",
   "version": "0.1.0",
+  "homepage": "https://JuanP-VT.github.io/shop-app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +51,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.6.2"
   }
 }

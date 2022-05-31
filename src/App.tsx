@@ -65,7 +65,7 @@ function App() {
     <div id="App">
       <TopNav cart={cart} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/shop-app" element={<Home />} />
         <Route
           path="/shop"
           element={<Shop catalog={catalog} setCart={setCart} cart={cart} />}

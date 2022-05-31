@@ -308,6 +308,11 @@ font-family: 'Open Sans', sans-serif;
   background-color: rgb(25, 24, 24);
   border: 1px solid rgb(93, 55, 55);
 }
+.deleteFromCartBtn:hover {
+  transform: scale(1.5);
+  padding: 50px;
+  background-color: red;
+}
 #total {
   font-size: 3rem;
   font-family: "Luckiest Guy", cursive;
