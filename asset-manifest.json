@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shop-app/static/css/main.30ee5ad4.css",
+    "main.css": "/shop-app/static/css/main.9a9c13cd.css",
     "main.js": "/shop-app/static/js/main.9e995b69.js",
     "static/media/homebg.jpg": "/shop-app/static/media/homebg.20c0af56ae66a28f2bf9.jpg",
     "static/media/shopBg.jpg": "/shop-app/static/media/shopBg.d658cb4de2baa5141839.jpg",
@@ -9,11 +9,11 @@
     "static/media/dogecoin.png": "/shop-app/static/media/dogecoin.8f12c2ae16e0c32e72b3.png",
     "static/media/github.png": "/shop-app/static/media/github.a855c3975c028d8069f5.png",
     "index.html": "/shop-app/index.html",
-    "main.30ee5ad4.css.map": "/shop-app/static/css/main.30ee5ad4.css.map",
+    "main.9a9c13cd.css.map": "/shop-app/static/css/main.9a9c13cd.css.map",
     "main.9e995b69.js.map": "/shop-app/static/js/main.9e995b69.js.map"
   },
   "entrypoints": [
-    "static/css/main.30ee5ad4.css",
+    "static/css/main.9a9c13cd.css",
     "static/js/main.9e995b69.js"
   ]
 }
