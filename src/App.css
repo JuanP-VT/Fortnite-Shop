@@ -254,6 +254,15 @@ font-family: 'Open Sans', sans-serif;
     rgba(82, 0, 0, 1) 100%
   );
 }
+.rarity-dc {
+  background: rgb(13, 13, 210);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 13, 210, 0.8) 0%,
+    rgba(66, 66, 143, 1) 51%,
+    rgba(215, 10, 10, 1) 100%
+  );
+}
 #Cart {
   background: url(/src/img/cartBg.webp) no-repeat center center fixed;
   -webkit-background-size: cover;
