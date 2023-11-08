@@ -26,7 +26,7 @@ function Cart({ cart, setCart }: Props) {
         const cartCard = document.createElement("div");
         cartCard.classList.add("itemCartCard");
         //Rarity class
-        cartCard.classList.add(`rarity-${element.items[0].rarity}`);
+        cartCard.classList.add(`rarity-${element.items[0].rarity.value}`);
         const cardIndex = index.toString();
         cartCard.setAttribute("data-cartIndex", cardIndex);
         //Image Container

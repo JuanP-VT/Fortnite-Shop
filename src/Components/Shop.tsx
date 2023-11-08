@@ -9,6 +9,25 @@ interface Props {
   cart: CartInterface;
 }
 
+/**
+ * Historical Context (2023 Update):
+ * Reflecting on this implementation, I recognize that it was crafted from my then-current understanding and experience.
+ * Originally, instead of leveraging React's declarative and component-driven nature, I relied on direct DOM manipulations
+ * – a practice more aligned with vanilla JavaScript or jQuery. This approach was due to my nascent skills in React and
+ * a stronger familiarity with direct DOM APIs.
+ *
+ * Recommended Modernization:
+ * The ideal modern React way to handle this would involve creating a separate component to represent each item in the catalog.
+ * This new component would be responsible for its own rendering and state management. Then, we could render a list of these components
+ * by mapping over the `catalog` array, which would result in cleaner, more idiomatic React code. This would also utilize React's
+ * diffing algorithm more efficiently, potentially leading to better performance on updates.
+ *
+ * Legacy Disclaimer:
+ * The existing code serves as a testament to my learning journey. For educational purposes and to honor the evolution of my coding practices,
+ * I am leaving the original implementation untouched. It stands as a chronological marker of progress and a reminder that there is always room
+ * to grow and adapt with advancing technologies and practices.
+ *
+ */
 function Shop({ catalog, cart, setCart }: Props) {
   useEffect(() => {
     console.log(catalog);
@@ -21,6 +40,7 @@ function Shop({ catalog, cart, setCart }: Props) {
         }
       }
       //Create a itemcard for each element in catalog
+
       for (let index = 0; index < catalog.length; index++) {
         const element = catalog[index];
         const itemCard = document.createElement("div");
@@ -60,7 +80,7 @@ function Shop({ catalog, cart, setCart }: Props) {
         infoBox.append(infoName, infoDesc, infoPriceBox);
 
         // Rarity Color
-        itemCard.classList.add(`rarity-${element.items[0].rarity}`);
+        itemCard.classList.add(`rarity-${element.items[0].rarity.value}`);
         //Card Footer
         const addToCartBtnBox = document.createElement("div");
         addToCartBtnBox.classList.add("addToCartBtnBox");
